@@ -707,7 +707,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--orange); outline:none
    with everything pre-filled. Set a URL (Formspree, your own API,
    Make.com webhook…) and it will POST JSON instead.
    ========================================================= */
-const FORM_ENDPOINT = "";
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/4d96e7191e751573ba73b61e097d289c";
 const MAIL_CUSTOMER = "obchod@borix.eu";
 const MAIL_CARRIER  = "dispecink@borix.eu";
 
@@ -822,8 +822,14 @@ function wire(formId, statusId, mailTo, subjectCS, subjectEN){
       try{
         const res = await fetch(FORM_ENDPOINT, {
           method:"POST",
-          headers:{"Content-Type":"application/json"},
-          body: JSON.stringify({form: formId, subject, lang, ...data})
+          headers:{"Content-Type":"application/json", "Accept": "application/json"},
+          body: JSON.stringify({
+          _subject: subject,
+          _template: "table",
+          _captcha: "false",
+          lang,
+          ...data
+        })
         });
         if(!res.ok) throw new Error(res.status);
         show(box, T.okSent[lang], false);
