@@ -239,6 +239,13 @@ input:focus,select:focus,textarea:focus{border-color:var(--orange); outline:none
 .status.is-on{display:block}
 .status.is-err{border-color:#c0392b; background:rgba(192,57,43,.1)}
 
+.site-notice{
+  background:var(--orange); color:var(--white); padding:12px var(--gutter);
+  text-align:center; font-family:var(--font-display); font-size:13px;
+  font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+}
+.site-notice strong{font-weight:800}
+
 .contactcard{border-left:4px solid var(--orange); padding-left:26px}
 .contactcard ul{list-style:none; margin:22px 0 0; padding:0; display:grid; gap:14px}
 .contactcard li{display:flex; gap:12px; align-items:flex-start; font-size:15px}
@@ -320,6 +327,12 @@ input:focus,select:focus,textarea:focus{border-color:var(--orange); outline:none
     </nav>
   </div>
 </header>
+
+<div class="site-notice" role="status">
+  <strong data-cs="Připravujeme" data-en="Coming soon">Připravujeme</strong>
+  <span> — </span>
+  <span data-cs="Webové stránky jsou právě ve výstavbě." data-en="Our website is currently under construction.">Webové stránky jsou právě ve výstavbě.</span>
+</div>
 
 <!-- ========== HERO ========== -->
 <section class="hero" id="top">
