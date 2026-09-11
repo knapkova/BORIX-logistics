@@ -121,6 +121,9 @@ p{margin:0 0 16px}
 .btn .arw{transition:transform .15s ease}
 .btn:hover .arw{transform:translateX(4px)}
 
+.terms-links{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; max-width:920px; margin:0 auto}
+.terms-links .btn{justify-content:space-between; min-height:64px; padding:16px 20px; letter-spacing:.06em}
+
 :focus-visible{outline:3px solid var(--orange); outline-offset:3px}
 
 /* ---------- Hero ---------- */
@@ -260,9 +263,9 @@ input:focus,select:focus,textarea:focus{border-color:var(--orange); outline:none
 .footer ul{list-style:none; margin:0; padding:0; display:grid; gap:10px; font-size:14px}
 .footer a{text-decoration:none}
 .footer a:hover{color:var(--orange)}
-.footer__legal{border-top:1px solid rgba(255,255,255,.12); padding:22px 0; display:flex; align-items:center; gap:24px; flex-wrap:wrap}
-.footer__legal h4{margin:0}
-.footer__legal-links{display:flex; gap:20px; flex-wrap:wrap; font-size:13px}
+.footer__docs{border-top:1px solid rgba(255,255,255,.12); padding:20px 0; display:flex; align-items:center; gap:20px; flex-wrap:wrap}
+.footer__docs h4{margin:0}
+.footer__docs-links{display:flex; gap:20px; flex-wrap:wrap; font-size:13px}
 .footer__bar{
   border-top:1px solid rgba(255,255,255,.12); padding:20px 0;
   display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap;
@@ -295,6 +298,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--orange); outline:none
   .nav a{padding:14px 0; width:100%; border-bottom:1px solid var(--grey-200)}
   .lang{margin-top:14px}
   .svc,.form,.facts,.footer__grid{grid-template-columns:1fr}
+  .terms-links{grid-template-columns:1fr; gap:12px}
   .strip__grid{grid-template-columns:1fr}
   .strip__item{border-left:0; border-top:1px solid var(--grey-200)}
   .strip__item:first-child{border-top:0}
@@ -670,6 +674,13 @@ input:focus,select:focus,textarea:focus{border-color:var(--orange); outline:none
   </div>
 </section>
 
+<section class="section section--grey" aria-label="Dokumenty">
+  <div class="wrap terms-links">
+    <a class="btn btn--dark" href="vseobecne-prepravni-podminky.html">Všeobecné přepravní podmínky<span class="arw">→</span></a>
+    <a class="btn btn--dark" href="vseobecne-zasilatelske-podminky.html">Všeobecné zasílatelské podmínky<span class="arw">→</span></a>
+  </div>
+</section>
+
 <!-- ========== FOOTER ========== -->
 <footer class="footer">
   <div class="footer__diag2" aria-hidden="true"></div>
@@ -702,9 +713,9 @@ input:focus,select:focus,textarea:focus{border-color:var(--orange); outline:none
         </ul>
       </div>
     </div>
-    <div class="footer__legal">
+    <div class="footer__docs">
       <h4>Dokumenty</h4>
-      <div class="footer__legal-links">
+      <div class="footer__docs-links">
         <a href="vseobecne-prepravni-podminky.html">Všeobecné přepravní podmínky</a>
         <a href="vseobecne-zasilatelske-podminky.html">Všeobecné zasílatelské podmínky</a>
       </div>
