@@ -132,6 +132,11 @@ p{margin:0 0 16px}
   padding:120px 0 96px; overflow:hidden;
 }
 .hero__bg{position:absolute; inset:0; overflow:hidden}
+.hero__image{
+  position:absolute; inset:0;
+  background:url("baner.png") center center / cover no-repeat;
+  opacity:.78; filter:saturate(.92) contrast(1.08);
+}
 /* 45° light trails — the highway motif from the manual cover */
 .trail{
   position:absolute; width:200%; height:2px; left:-50%;
@@ -149,7 +154,7 @@ p{margin:0 0 16px}
 @keyframes slide{from{transform:rotate(-45deg) translateX(-30%)} to{transform:rotate(-45deg) translateX(30%)}}
 .hero__veil{
   position:absolute; inset:0;
-  background:radial-gradient(120% 90% at 15% 40%, rgba(10,27,46,.55) 0%, rgba(10,27,46,.92) 60%, var(--navy) 100%);
+  background:linear-gradient(90deg,rgba(10,27,46,.96) 0%,rgba(10,27,46,.82) 38%,rgba(10,27,46,.42) 72%,rgba(10,27,46,.68) 100%),linear-gradient(0deg,rgba(10,27,46,.42),rgba(10,27,46,.08));
 }
 .hero__inner{position:relative; z-index:2; max-width:780px}
 .hero h1{
@@ -302,6 +307,10 @@ input:focus,select:focus,textarea:focus{border-color:var(--orange); outline:none
   .strip__grid{grid-template-columns:1fr}
   .strip__item{border-left:0; border-top:1px solid var(--grey-200)}
   .strip__item:first-child{border-top:0}
+  .hero__inner{max-width:100%}
+  .hero__sub{max-width:100%}
+  .hero__cta{width:100%}
+  .hero__cta .btn{width:100%; justify-content:space-between}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important; transition:none !important}
@@ -344,12 +353,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--orange); outline:none
 <!-- ========== HERO ========== -->
 <section class="hero" id="top">
   <div class="hero__bg" aria-hidden="true">
-    <div class="trail"></div>
-    <div class="trail trail--o"></div>
-    <div class="trail"></div>
-    <div class="trail trail--o"></div>
-    <div class="trail"></div>
-    <div class="trail trail--o"></div>
+    <div class="hero__image"></div>
   </div>
   <div class="hero__veil" aria-hidden="true"></div>
 
